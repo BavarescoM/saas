@@ -1,0 +1,33 @@
+
+adonis new backend --api-only
+
+
+adonis make:model Project -m -c
+
+adonis make:model Team -m -c
+
+make:model UserTeam -m
+
+make:model Invite -m -c
+
+configarar relacionamento dos models
+
+
+npm i eslint -d
+npx eslint --init
+
+//config eslit prettier
+https://gist.github.com/fnoquiq/be627f3043da46ec638cd0543878d0ec
+
+difinir campo nas migrations
+adonis migration:run
+
+
+adonis make:seed
+
+adonis install @adonisjs/lucid-slugify
+
+adonis make:middleware Team
+http
+
+adonis make:hook Invite
