@@ -32,3 +32,14 @@ http
 
 adonis make:hook Invite
 cont 09
+
+
+https://github.com/wemersonrv/adonis-antl-messages/blob/master/resources/locales/pt/validation.json
+
+
+acl 
+
+adonis acl:setup
+
+
+cont 14

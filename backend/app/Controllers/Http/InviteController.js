@@ -10,6 +10,7 @@ class InviteController {
       user_id: auth.user.id,
       team_id: request.team.id
     }))
+
     await Invite.createMany(data)
   }
 }
