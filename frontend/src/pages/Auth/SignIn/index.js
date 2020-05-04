@@ -2,8 +2,11 @@ import React, { Component } from "react";
 
 import { Container, SignForm } from "../styles";
 import Button from "../../../styles/components/Button";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import AuthActions from "../../../store/ducks/auth";
 
-export default class SignIn extends Component {
+class SignIn extends Component {
   state = {
     email: "",
     password: "",
@@ -11,6 +14,8 @@ export default class SignIn extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
+    const { signInRequest } = this.props;
+    signInRequest(email, password);
   };
   handleInputChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -43,3 +48,6 @@ export default class SignIn extends Component {
     );
   }
 }
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(AuthActions, dispatch);
+export default connect(null, mapDispatchToProps)(SignIn);
