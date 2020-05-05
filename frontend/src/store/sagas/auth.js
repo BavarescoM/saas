@@ -25,3 +25,9 @@ export function* signIn({ email, password }) {
     );
   }
 }
+
+export function* signOut() {
+  localStorage.removeItem("@Omini:token");
+  localStorage.removeItem("@Omini:team");
+  yield put(push("/signin"));
+}
